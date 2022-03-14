@@ -72,7 +72,14 @@ export default function(context, eventData, targetElement, referenceElement) {
   referenceImagePlane.imagePositionPatient = convertToVector3(
     referenceImagePlane.imagePositionPatient
   );
-
+console.log({
+    'RowCos':targetImagePlane.rowCosines,
+    'ColumnCos':targetImagePlane.columnCosines,
+    'ImagPosition':targetImagePlane.imagePositionPatient,
+    'RefRowCos':referenceImagePlane.rowCosines,
+    'RefColumnCos':referenceImagePlane.columnCosines,
+    'RefImagPosition':referenceImagePlane.imagePositionPatient,
+  });
   // The image plane normals must be > 30 degrees apart
   const targetNormal = targetImagePlane.rowCosines
     .clone()
